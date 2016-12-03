@@ -12,6 +12,9 @@ import { DashboardModule } from './modules/dashboard/dashboard.module';
 // Routing
 import { AppRoutingModule } from './app.routing';
 
+// Services
+import { RouteGuardService } from './route-guard.service';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -24,7 +27,9 @@ import { AppRoutingModule } from './app.routing';
     LoginModule,
     DashboardModule
   ],
-  providers: [],
+  providers: [
+    RouteGuardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
