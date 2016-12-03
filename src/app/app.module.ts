@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 
 // Modules
 import { LoginModule } from './modules/login/login.module';
+import { DashboardModule } from './modules/dashboard/dashboard.module';
 
 // Routing
 import { AppRoutingModule } from './app.routing';
@@ -20,7 +21,8 @@ import { AppRoutingModule } from './app.routing';
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    LoginModule
+    LoginModule,
+    DashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
