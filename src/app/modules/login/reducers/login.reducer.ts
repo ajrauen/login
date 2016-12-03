@@ -1,11 +1,12 @@
 import { ActionReducer, Action } from '@ngrx/store';
+import { AuthModel } from '../models/auth.model';
 
-export const LoginReducer: ActionReducer<any> = (state = {authorized:false}, action: Action) => {
+export const LoginReducer: ActionReducer<any> = (state:AuthModel = new AuthModel(), action: Action) => {
 
     switch(action.type){
 
         case 'login': {
-            return Object.assign({}, state, {authorized: action.payload});
+            return Object.assign(new AuthModel(), state, {authorized: action.payload});
         }
 
         default:

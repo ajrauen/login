@@ -6,15 +6,17 @@ import { Store } from '@ngrx/store';
 
 import { LoginService } from './modules/login/services/login.service';
 
+import { AuthModel } from './modules/login/models/auth.model';
+
 
 @Injectable()
 export class RouteGuardService implements CanActivate {
 
-  private login$: Observable<any>;
+  private login$: Observable<AuthModel>;
 
   private authorized:boolean = false;
 
-  constructor(private router: Router, private store: Store<any>) {
+  constructor(private router: Router, private store: Store<AuthModel>) {
     this.login$ = store.select('login');
 
      this.login$.subscribe(
