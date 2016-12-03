@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+// Redux
+import { StoreModule } from '@ngrx/store';
+
 import { AppComponent } from './app.component';
 
 // Modules
@@ -15,6 +18,9 @@ import { AppRoutingModule } from './app.routing';
 // Services
 import { RouteGuardService } from './route-guard.service';
 
+//Reducers
+import { LoginReducers } from './modules/login/reducers/reducers';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -25,7 +31,8 @@ import { RouteGuardService } from './route-guard.service';
     HttpModule,
     AppRoutingModule,
     LoginModule,
-    DashboardModule
+    DashboardModule,
+        StoreModule.provideStore(LoginReducers),
   ],
   providers: [
     RouteGuardService
