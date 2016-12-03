@@ -23,6 +23,7 @@ export class RouteGuardService implements CanActivate {
   }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot){
+    console.log("Am I authorized? " + this.authorized)
     if(this.authorized) {
       return true;
     }

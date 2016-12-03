@@ -1,6 +1,6 @@
 import { ActionReducer, Action } from '@ngrx/store';
 
-export const LoginReducer: ActionReducer<any> = (state = {authenticated:false}, action: Action) => {
+export const LoginReducer: ActionReducer<any> = (state = {authorized:false}, action: Action) => {
 
     switch(action.type){
 
