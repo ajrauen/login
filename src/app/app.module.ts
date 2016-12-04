@@ -3,20 +3,20 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-// Redux
-import { StoreModule } from '@ngrx/store';
-
 import { AppComponent } from './app.component';
 
 // Modules
 import { LoginModule } from './modules/login/login.module';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
 
+// Services
+import { RouteGuardService } from './route-guard.service';
+
 // Routing
 import { AppRoutingModule } from './app.routing';
 
-// Services
-import { RouteGuardService } from './route-guard.service';
+// Redux
+import { StoreModule } from '@ngrx/store';
 
 //Reducers
 import { LoginReducers } from './modules/login/reducers/reducers';
@@ -29,10 +29,10 @@ import { LoginReducers } from './modules/login/reducers/reducers';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule,
     LoginModule,
     DashboardModule,
-        StoreModule.provideStore(LoginReducers),
+    StoreModule.provideStore(LoginReducers),
+    AppRoutingModule
   ],
   providers: [
     RouteGuardService
